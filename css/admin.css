@@ -19,6 +19,8 @@
     float:none;
     clear:both;
 }
+
+
 /*Css for footer*/
 .footer {
  background-color: #ff4757;
@@ -65,5 +67,9 @@
     margin:1%;
     padding:2%;
     float:left;
+
+}
+.tbl-full {
+    width:100%;
 
 }
