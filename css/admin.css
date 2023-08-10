@@ -19,7 +19,13 @@
     float:none;
     clear:both;
 }
-
+.success{
+    color:#2ed573;
+    
+}
+.error{
+    color:#ff4757;
+}
 
 /*Css for footer*/
 .footer {
