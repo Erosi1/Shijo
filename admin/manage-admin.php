@@ -55,6 +55,15 @@ background-color:#ff4757;
     <div class="wrapper">
         <h1>Manage Admin</h1>
         <br>
+       
+        <?php 
+        if(isset($_SESSION['add'])){
+          echo $_SESSION['add'];     //displaying session message
+          unset($_SESSION['add']); //removing session message
+        }
+        ?>
+        <br>
+        <br>
         <br>
         <a href="add-admin.php" class="btn-primary">Add Admin</a>
         <br>
@@ -67,33 +76,49 @@ background-color:#ff4757;
                 <th>Username</th>
                 <th>Actions</th>
             </tr>
-            <tr>
-                <td>1.</td>
-                <td>Eros Mehmeti</td>
-                <td>rosi</td>
+            <?php 
+            //mi marr te dhenat prej databazes
+            $sql = "SELECT * FROM tbl_admin";
+            //execute the query 
+            $res = mysqli_query($conn,$sql);
+            //check whether the query is executed or not if $res == true 
+            if($res==TRUE){
+              //COUNT ROWS to check whether we have data in database or not
+              $count = mysqli_num_rows($res); //funksion mi marr kejt rreshtat ne databaze
+              $sn=1; //create a variable and Assign value 1 - ID
+
+              //check the number of rows if $rows 
+              if($count>0){
+                //we have data in database
+               while($rows=mysqli_fetch_assoc($res)){
+                //using while loop to get all the data from database
+                $id=$rows['id'];
+                $full_name=$rows['full_name'];
+                $username=$rows['username'];
+                //DISPLAY THE DATA IN TABLE
+               
+               ?>
+                <tr>
+                <td><?php echo $sn++ ?>.</td>
+                <td><?php echo $full_name ?></td>
+                <td><?php echo $username ?></td>
                 <td>
                 <a href="#" class="btn-secondary">Update Admin</a>
                 <a href="#" class="btn-danger">Delete Admin</a>
                 </td>
             </tr>
-            <tr>
-                <td>2.</td>
-                <td>Eros Mehmeti</td>
-                <td>rosi</td>
-                <td>
-                <a href="#" class="btn-secondary">Update Admin</a>
-                <a href="#" class="btn-danger">Delete Admin</a>
-                </td>
-            </tr>
-            <tr>
-                <td>3.</td>
-                <td>Eros Mehmeti</td>
-                <td>rosi</td>
-                <td>
-                <a href="#" class="btn-secondary">Update Admin</a>
-                <a href="#" class="btn-danger">Delete Admin</a>
-                </td>
-            </tr>
+               <?php
+               }
+              }else {
+                //we do not have data in database
+              }
+
+
+            }
+
+            
+            ?>
+        
         </table>
     </div>
 </div>

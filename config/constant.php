@@ -1,5 +1,11 @@
 <?php 
+//start session
+session_start();
+
+
 //CREATE CONSTANT TO STORE Non Repeating Values 
+//CREATE CONSTANT FOR HOME URL 
+define('SITEURL','http://localhost/restaurant/');
 define('LOCALHOST','localhost');
 define('DB_USERNAME','root');
 define('DB_PASSWORD','');
