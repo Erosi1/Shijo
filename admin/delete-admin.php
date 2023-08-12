@@ -25,7 +25,7 @@ if($res==true){
 else 
 {
     //query failed to execute
-    $_SESSION['delete']='<span style="color:#2ed573;">Failed to  delete admin</span>';
+    $_SESSION['delete']='<span style="color:#ff6b81;">Failed to  delete admin</span>';
     header("location:".SITEURL.'admin/manage-admin.php');
 }
 

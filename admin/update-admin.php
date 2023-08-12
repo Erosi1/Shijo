@@ -105,13 +105,13 @@ $id= $_POST['id'];
   //Check whether the query is executed
   if($res ==TRUE){
     //Query executed and admin updated
-    $_SESSION['update']='<span style="color:#2ed573;">Admin added successfully</span>';
+    $_SESSION['update']='<span style="color:#2ed573;">Admin updated successfully</span>';
        //redirect page to manage admin
        header("location:".SITEURL.'admin/manage-admin.php');
 
   }
   else {
-    $_SESSION['update']='<span style="color:#2ed573;">Failed to update admin</span>';
+    $_SESSION['update']='<span style="color:#ff6b81;">Failed to update admin</span>';
     //redirect page to manage admin
     header("location:".SITEURL.'admin/update-admin.php');
   }

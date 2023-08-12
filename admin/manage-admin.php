@@ -69,6 +69,18 @@ background-color:#ff4757;
           echo $_SESSION['update'];     //displaying session message
           unset($_SESSION['update']); //removing session message
         }
+        if(isset($_SESSION['user-not-found'])){
+          echo $_SESSION['user-not-found'];     //displaying session message
+          unset($_SESSION['user-not-found']); //removing session message
+        }
+        if(isset($_SESSION['pwd-not-match'])){
+          echo $_SESSION['pwd-not-match'];     //displaying session message
+          unset($_SESSION['pwd-not-match']); //removing session message
+        }
+        if(isset($_SESSION['change-pwd'])){
+          echo $_SESSION['change-pwd'];     //displaying session message
+          unset($_SESSION['change-pwd']); //removing session message
+        }
         ?>
         
         <br>
@@ -112,6 +124,7 @@ background-color:#ff4757;
                 <td><?php echo $full_name ?></td>
                 <td><?php echo $username ?></td>
                 <td>
+                <a href="<?php echo SITEURL;?>admin/update-password.php?id=<?php echo $id?>"class="btn-primary">Change Password</a>
                 <a href="<?php echo SITEURL;?>admin/update-admin.php?id=<?php echo $id?>"class="btn-secondary">Update Admin</a>
                 <a href="<?php echo SITEURL;?>admin/delete-admin.php?id=<?php echo $id?>" class="btn-danger">Delete Admin</a>
                 </td>
