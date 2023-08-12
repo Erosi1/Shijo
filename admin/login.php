@@ -14,6 +14,10 @@
             echo $_SESSION['login'];
             unset($_SESSION['login']);
         }
+        if(isset($_SESSION['no-login-message'])){
+            echo $_SESSION['no-login-message'];
+            unset($_SESSION['no-login-message']);
+        }
         ?>
         <br><br>
         <!--Login Form Starts-->
@@ -51,6 +55,7 @@ $count = mysqli_num_rows($res);
 if($count==1){
 //User available
 $_SESSION['login']='<span style="color:#2ed573;">Logged in Successfully </span>';
+$_SESSION['user']=$username; //check whether the user is logged in or not   logout e bon unset
 header("location:".SITEURL.'admin/');
 
 }

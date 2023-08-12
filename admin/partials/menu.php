@@ -1,4 +1,9 @@
-<?php include('../config/constant.php')?>
+<?php 
+include('../config/constant.php');
+include('login-check.php');
+?>
+
+
 <html>
     <head>
         <title>Food Order Website - Home Page</title>

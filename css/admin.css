@@ -88,32 +88,32 @@
 
 }
 .btn-primary {
-    background-color:#1e90ff;
-    padding:1%;
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-  }
-  .btn-primary:hover{
-    background-color:#3742fa;
-  }
-  .btn-secondary{
-    background-color:#7bed9f;
-    padding:1%;
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-  }
-  .btn-secondary:hover{
-    background-color:#2ed573;
-  }
-  .btn-danger{
-    background-color:#ff6b81;
-    padding:1%;
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-  }
-  .btn-danger:hover{
-  background-color:#ff4757;
-  }
+  background-color:#1e90ff;
+  padding:1%;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+.btn-primary:hover{
+  background-color:#3742fa;
+}
+.btn-secondary{
+  background-color:#7bed9f;
+  padding:1%;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+.btn-secondary:hover{
+  background-color:#2ed573;
+}
+.btn-danger{
+  background-color:#ff6b81;
+  padding:1%;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+.btn-danger:hover{
+background-color:#ff4757;
+}
