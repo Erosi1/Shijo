@@ -58,8 +58,7 @@ include('partials/menu.php');
     <br>
         <br>
         <a href="add-category.php" class="btn-primary">Add Category</a>
-        <br>
-        <br>
+        
         <?php 
         if(isset($_SESSION['add-category'])){
           echo $_SESSION['add-category'];     //displaying session message
@@ -69,37 +68,77 @@ include('partials/menu.php');
         <table style="width: 100%;">
             <tr>
                 <th>S.N</th>
-                <th>Fullname</th>
-                <th>Username</th>
-                <th>Actions</th>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Featured</th>
+                <th>Active</th>
             </tr>
-            <tr>
-                <td>1.</td>
-                <td>Eros Mehmeti</td>
-                <td>rosi</td>
+            <?php 
+            
+            $sql = "SELECT * FROM tbl_category"; // ii merr kejt te dhenat prej databzes
+
+            $res = mysqli_query($conn,$sql);  // e ekzekuton sql queryn 
+
+            $count = mysqli_num_rows($res); // mi numru rreshtat
+            $sn=1; //e krijon ni variabel per serial number ja len vleren 1 qe saher tkrijohet ni kategori me u rrit serial number per 1
+            if($count>0){
+              //we have data in database
+             while($row=mysqli_fetch_assoc($res)){
+               $id=$row['id'];
+               $title=$row['title'];
+               $image_name=$row['image_name'];
+               $featured=$row['featured'];
+               $active=$row['active'];
+
+               ?>
+<tr>
+                <td><?php echo $sn++ ?></td>
+                <td><?php echo $title?></td>
+
                 <td>
-                <a href="#" class="btn-secondary">Update Admin</a>
-                <a href="#" class="btn-danger">Delete Admin</a>
+
+                  <?php 
+                  //check whether image name is availiable or not
+                  if($image_name!=""){
+                    //display the image
+                    ?>
+                    <img src="<?php echo SITEURL;?>images/category/<?php echo $image_name;?>"width="80px">
+                    <?php 
+                  }
+                  else {
+                    //display the message
+                    echo "<span style='color:#ff6b81;'>Image not added</span>";
+                  }
+                  ?>
+              
+              </td>
+                
+                <td><?php echo $featured?></td>
+                <td><?php echo $active?></td>
+                <td>
+                <a href="#" class="btn-secondary">Update Category</a>
+                <a href="#" class="btn-danger">Delete Category</a>
                 </td>
             </tr>
-            <tr>
-                <td>2.</td>
-                <td>Eros Mehmeti</td>
-                <td>rosi</td>
-                <td>
-                <a href="#" class="btn-secondary">Update Admin</a>
-                <a href="#" class="btn-danger">Delete Admin</a>
-                </td>
-            </tr>
-            <tr>
-                <td>3.</td>
-                <td>Eros Mehmeti</td>
-                <td>rosi</td>
-                <td>
-                <a href="#" class="btn-secondary">Update Admin</a>
-                <a href="#" class="btn-danger">Delete Admin</a>
-                </td>
-            </tr>
+               <?php
+             }
+            }else {
+              //we dont have data in database so we will display the message inside table
+              ?>
+              <tr>
+                <td colspan="6"><span style="color:#ff6b81;">No Category added</span></td>
+              </tr>
+
+               <?php 
+
+            }
+            ?>
+
+
+            
+       
+            
+            
         </table>
     </div>
  

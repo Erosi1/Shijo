@@ -145,7 +145,7 @@
        title='$title',
        image_name='$image_name',
        featured='$featured',
-       active='active'
+       active='$active'
        ";
        $res=mysqli_query($conn,$sql);
 

@@ -100,7 +100,7 @@ if(isset($_POST['submit']))
     }
     else {
         //failed to insert data
-        $_SESSION['add']='<span style="color:#2ed573;">Failed to  add admin</span>';
+        $_SESSION['add']='<span style="color:#ff6b81;">Failed to  add admin</span>';
         //redirect page to manage admin
         header("location:".SITEURL.'admin/add-admin.php');
       
