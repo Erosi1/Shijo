@@ -19,18 +19,7 @@
   background-color:#2ed573;
 }
     </style>
-    <script>
-        function validateForm() {
-            var fullname = document.forms["myForm"]["full_name"].value;
-            var username = document.forms["myForm"]["username"].value;
-            var password = document.forms["myForm"]["password"].value;
-
-            if (fullname == "" || username == "" || password == "") {
-                alert("All fields must be filled out");
-                return false;
-            }
-        }
-    </script>
+    
 </head>
 <body>
 <?php include('partials/menu.php');?>
@@ -47,27 +36,27 @@
           unset($_SESSION['add']); //removing session message
         }
         ?>
-       <form name="myForm" action="" method="POST" onsubmit="return validateForm()">
+       <form name="myForm" action="" method="POST" ">
             <table class="tbl-30">
                 <tr>
                     <td>Fullname: </td>
-                    <td><input type="text"name="full_name"placeholder="Enter your name"> </td>
+                    <td><input type="text"name="full_name"placeholder="Enter your name"required> </td>
                    
                 </tr>
 
                 <tr>
                     <td>Username: </td>
-                    <td><input type="text"name="username"placeholder="Enter your username"></td>
+                    <td><input type="text"name="username"placeholder="Enter your username"required></td>
                 </tr>
 
                 <tr>
                     <td>Password: </td>
-                    <td><input type="password"name="password"placeholder="Enter your password"></td>
+                    <td><input type="password"name="password"placeholder="Enter your password"required></td>
                 </tr>
                 <tr>
                     <td colspan="2">
                         <br>
-                        <input type="submit"name="submit" value="Add Admin" class="btn-secondary">
+                        <input type="submit"name="submit" value="Add Admin" class="btn-secondary"required>
                     </td>
                 </tr>
             </table>

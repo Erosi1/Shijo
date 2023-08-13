@@ -57,10 +57,15 @@ include('partials/menu.php');
     <h1>Manage Category</h1>   
     <br>
         <br>
-        <a href="#" class="btn-primary">Add Category</a>
+        <a href="add-category.php" class="btn-primary">Add Category</a>
         <br>
         <br>
-        
+        <?php 
+        if(isset($_SESSION['add-category'])){
+          echo $_SESSION['add-category'];     //displaying session message
+          unset($_SESSION['add-category']); //removing session message
+        }?>
+        <br><br>
         <table style="width: 100%;">
             <tr>
                 <th>S.N</th>
