@@ -103,6 +103,11 @@
             //To upload the image we need image name,source path,destination path
            $image_name=$_FILES['image']['name'];
 
+           if($image_name !="")
+           {
+
+           
+
            //1.Get the extension of our image(jpg)
            $ext = end(explode('.',$image_name));
 
@@ -124,13 +129,14 @@
            //Check whether the image is uploaded or not
            if($upload==false){
             //Set message
-            $_SESSION['upload']='<span style="color:#2ed573;">Failed to upload image</span>';
+            $_SESSION['upload']='<span style="color:#ff6b81;">Failed to upload image</span>';
         //redirect page 
           header("location:".SITEURL.'admin/add-category.php');
           //stop the process
           die();
             
            }
+          }
 
            //If image isnt uploaded than we will stop the process and redirect with error message
 
@@ -155,7 +161,7 @@
        header("location:".SITEURL.'admin/manage-category.php'); 
 
        }else {
-        $_SESSION['add-category']='<span style="color:#2ed573;">Failed to  add category</span>';
+        $_SESSION['add-category']='<span style="color:#ff6b81;">Failed to  add category</span>';
         //redirect page to manage admin
         header("location:".SITEURL.'admin/add-category.php');
        }
