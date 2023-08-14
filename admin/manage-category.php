@@ -58,12 +58,22 @@ include('partials/menu.php');
     <br>
         <br>
         <a href="add-category.php" class="btn-primary">Add Category</a>
-        
+        <br>
+        <br>
         <?php 
         if(isset($_SESSION['add-category'])){
           echo $_SESSION['add-category'];     //displaying session message
           unset($_SESSION['add-category']); //removing session message
-        }?>
+        }
+        if(isset($_SESSION['remove'])){
+          echo $_SESSION['remove'];     //displaying session message
+          unset($_SESSION['remove']); //removing session message
+        }
+        if(isset($_SESSION['delete'])){
+          echo $_SESSION['delete'];     //displaying session message
+          unset($_SESSION['delete']); //removing session message
+        }
+        ?>
         <br><br>
         <table style="width: 100%;">
             <tr>
@@ -117,7 +127,7 @@ include('partials/menu.php');
                 <td><?php echo $active?></td>
                 <td>
                 <a href="#" class="btn-secondary">Update Category</a>
-                <a href="#" class="btn-danger">Delete Category</a>
+                <a href="<?php echo SITEURL;?>admin/delete-category.php?id=<?php echo $id?>&image_name=<?php echo $image_name?>" class="btn-danger">Delete Category</a>
                 </td>
             </tr>
                <?php
