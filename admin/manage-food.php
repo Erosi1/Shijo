@@ -57,7 +57,16 @@ include('partials/menu.php');
     <h1>Manage Food</h1>   
     <br>
         <br>
-        <a href="#" class="btn-primary">Add Food</a>
+        <?php 
+         if(isset($_SESSION['add-food'])){
+          echo $_SESSION['add-food'];     //displaying session message
+          unset($_SESSION['add-food']); //removing session message
+        }
+        ?>
+        <br>
+        <br>
+        <br>
+        <a href="add-food.php" class="btn-primary">Add Food</a>
         <br>
         <br>
         

@@ -29,8 +29,7 @@
 <div class="main-content">
     <div class="wrapper">
         <h1>Add Category</h1>
-        <br>
-        <br>
+        
         <?php 
         if(isset($_SESSION['add-category'])){
           echo $_SESSION['add-category'];     //displaying session message
@@ -40,8 +39,7 @@
             echo $_SESSION['upload'];     //displaying session message
             unset($_SESSION['upload']); //removing session message
           }?>
-        <br>
-        <br>
+        
         <!--Category Form Starts -->
        <form action="" method="POST" enctype="multipart/form-data"> <!--ENCTYPE NA MUNDESON ME UPLOAD FOTO-->
         <table class="tbl-30">
