@@ -102,6 +102,7 @@ include('partials/menu.php');
                 <th>Image</th>
                 <th>Featured</th>
                 <th>Active</th>
+                <th>Actions</th>
             </tr>
             <?php 
             
