@@ -62,6 +62,14 @@ include('partials/menu.php');
           echo $_SESSION['add-food'];     //displaying session message
           unset($_SESSION['add-food']); //removing session message
         }
+        if(isset($_SESSION['delete'])){
+          echo $_SESSION['delete'];     //displaying session message
+          unset($_SESSION['delete']); //removing session message
+        }
+        if(isset($_SESSION['upload'])){
+          echo $_SESSION['upload'];     //displaying session message
+          unset($_SESSION['upload']); //removing session message
+        }
         ?>
         <br>
         <br>
@@ -123,7 +131,7 @@ else {
                 <td><?php echo $active?></td>
                 <td>
                 <a href="#" class="btn-secondary">Update Food</a>
-                <a href="#" class="btn-danger">Delete Food</a>
+                <a href="delete-food.php/?id=<?php echo $id?>&image_name=<?php echo $image_name?>" class="btn-danger">Delete Food</a>
                 </td>
             </tr>
               <?php
