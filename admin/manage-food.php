@@ -70,6 +70,18 @@ include('partials/menu.php');
           echo $_SESSION['upload'];     //displaying session message
           unset($_SESSION['upload']); //removing session message
         }
+        if(isset($_SESSION['update'])){
+          echo $_SESSION['update'];     //displaying session message
+          unset($_SESSION['update']); //removing session message
+        }
+        if(isset($_SESSION['failed-remove'])){
+          echo $_SESSION['failed-remove'];     //displaying session message
+          unset($_SESSION['failed-remove']); //removing session message
+        }
+        if(isset($_SESSION['upload'])){
+          echo $_SESSION['upload'];     //displaying session message
+          unset($_SESSION['upload']); //removing session message
+        }
         ?>
         <br>
         <br>
@@ -130,8 +142,8 @@ else {
                 <td><?php echo $featured?></td>
                 <td><?php echo $active?></td>
                 <td>
-                <a href="#" class="btn-secondary">Update Food</a>
-                <a href="delete-food.php/?id=<?php echo $id?>&image_name=<?php echo $image_name?>" class="btn-danger">Delete Food</a>
+                <a href="update-food.php?id=<?php echo $id;?>" class="btn-secondary">Update Food</a>
+                <a href="delete-food.php?id=<?php echo $id?>&image_name=<?php echo $image_name?>" class="btn-danger">Delete Food</a>
                 </td>
             </tr>
               <?php
