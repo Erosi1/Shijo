@@ -74,9 +74,9 @@ if(isset($_POST['submit']))
 {
     //Button clicked
     //I merr te dhenat prej formes i run nvariabla 
-    $full_name = $_POST['full_name'];
-    $username= $_POST['username'];
-    $password= md5($_POST['password']);//Me enkriptu passwordin amo smunesh me dekriptu osht one way encryption
+    $full_name = mysqli_real_escape_string($conn,$_POST['full_name']);
+    $username= mysqli_real_escape_string($conn,$_POST['username']);
+    $password= mysqli_real_escape_string($conn,md5($_POST['password']));//Me enkriptu passwordin amo smunesh me dekriptu osht one way encryption
 
     //CREATE SQL QUERY PER ME I RUJT TE DHENAT NDATABAZE
     $sql = "INSERT INTO tbl_admin SET

@@ -17,7 +17,8 @@
     <section class="food-search text-center">
         <div class="container">
             <?php 
-              $search = $_POST['search'];
+              $search = mysqli_real_escape_string($conn,$_POST['search']); //mysqli_real_escape_string e kthen qkado qe bon search nstring ne menyre qe  mos me mujt me na ndiku hakerat databazen tu bo search
+
             ?>
             <h2>Foods on Your Search <a href="#" class="text-white">"<?php echo $search?>"</a></h2>
 

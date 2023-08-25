@@ -114,9 +114,9 @@
         <?php 
         if(isset($_POST['submit'])){
            //1.Get the data from form
-           $title=$_POST['title'];
-           $description=$_POST['description'];
-           $price=$_POST['price'];
+           $title=mysqli_real_escape_string($conn,$_POST['title']);
+           $description=mysqli_real_escape_string($conn,$_POST['description']);
+           $price=mysqli_real_escape_string($conn,$_POST['price']);
            $category=$_POST['category'];
            if(isset($_POST['featured'])){
             $featured=$_POST['featured'];

@@ -79,7 +79,7 @@
         if(isset($_POST['submit'])){
            //1.Get the values from form
 
-        $title=$_POST['title'];
+        $title=mysqli_real_escape_string($conn,$_POST['title']);
         //For radio input type we need to check whether the button is selected or not
         if(isset($_POST['featured'])){
             $featured=$_POST['featured'];

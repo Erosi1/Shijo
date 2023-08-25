@@ -160,8 +160,8 @@ else
         if(isset($_POST['submit'])){
            //1.get all the data from form
            $id=$_POST['id'];
-           $title=$_POST['title'];
-           $description=$_POST['description'];
+           $title=mysqli_real_escape_string($conn,$_POST['title']);
+           $description=mysqli_real_escape_string($conn,$_POST['description']);
            $price=$_POST['price'];
            $current_image=$_POST['current_image'];
            $category=$_POST['category'];
